@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import PollView from './views/PollView.vue'
-import HomeView from './views/HomeView.vue'
+import OverlayView from './views/OverlayView.vue'
+import DemoView from './views/DemoView.vue'
 
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
-      component: HomeView,
+      path: '/demo',
+      component: DemoView,
     },
     {
       path: '/:channel',
-      component: PollView,
+      component: OverlayView,
     },
   ],
 })

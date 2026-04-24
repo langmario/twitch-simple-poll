@@ -10,7 +10,8 @@
         "EditorConfig.EditorConfig",
         "oxc.oxc-vscode",
         "Vue.volar",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "antfu.iconify"
       ]
     }
   }
