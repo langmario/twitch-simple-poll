@@ -16,7 +16,7 @@ async function startDemo() {
   results.value['yes'] = 1
   isActive.value = true
   await delay(1000)
-  for (let i = 0; i < 99; i++) {
+  for (let i = 0; i < 149; i++) {
     const idx = Math.random()
     if (idx > 0.45) {
       results.value['yes'] += 1
@@ -25,7 +25,7 @@ async function startDemo() {
     } else {
       results.value['maybe'] += 1
     }
-    await delay(Math.random() * i * 10)
+    await delay(Math.random() * i * 5)
   }
 }
 
