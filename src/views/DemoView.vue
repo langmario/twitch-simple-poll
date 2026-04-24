@@ -36,13 +36,6 @@ onMounted(async () => {
 
 <template>
   <div class="grid size-full items-end justify-stretch overflow-hidden p-2 pb-7">
-    <Transition
-      enter-from-class="translate-y-full opacity-0 blur-xs scale-75"
-      leave-to-class="translate-y-full opacity-0 blur-xs scale-75"
-      enter-active-class="transition duration-1500 ease-in-out"
-      leave-active-class="transition duration-1500 ease-in-out"
-    >
-      <Overlay v-if="isActive" :results="results" />
-    </Transition>
+    <Overlay v-if="isActive" :results="results" />
   </div>
 </template>
