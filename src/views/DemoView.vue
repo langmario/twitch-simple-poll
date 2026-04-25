@@ -9,23 +9,18 @@ const results = ref<Results>({
   maybe: 0,
 })
 
-const isActive = ref(false)
-
 async function startDemo() {
   const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
-  results.value['yes'] = 1
-  isActive.value = true
-  await delay(1000)
-  for (let i = 0; i < 149; i++) {
+  for (let i = 0; i < 100; i++) {
     const idx = Math.random()
-    if (idx > 0.45) {
+    if (idx > 0.4) {
       results.value['yes'] += 1
-    } else if (idx > 0.02) {
+    } else if (idx > 0.01) {
       results.value['no'] += 1
     } else {
       results.value['maybe'] += 1
     }
-    await delay(Math.random() * i * 5)
+    await delay(Math.random() * 10 * i)
   }
 }
 
@@ -42,7 +37,10 @@ onMounted(async () => {
       enter-active-class="transition duration-1500 ease-in-out"
       leave-active-class="transition duration-1500 ease-in-out"
     >
-      <Overlay v-if="isActive" :results="results" />
+      <Overlay
+        v-if="Object.values(results).reduce((agg, cur) => agg + cur, 0) > 0"
+        :results="results"
+      />
     </Transition>
   </div>
 </template>
