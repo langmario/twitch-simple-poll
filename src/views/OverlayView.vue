@@ -35,7 +35,7 @@ function onChat(user: string, originalMessage: string) {
     if (key) {
       votes.value.set(user, key)
       clearTimeout(voteTimeout.value)
-      voteTimeout.value = setTimeout(() => (showResults.value = false), 10000)
+      voteTimeout.value = setTimeout(() => (showResults.value = false), 15000)
     }
   }
 }
