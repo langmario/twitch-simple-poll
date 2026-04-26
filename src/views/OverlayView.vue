@@ -47,7 +47,7 @@ onMounted(() => {
     Comfy.Init(channel.value.toString())
   }
 })
-watch(votes, (votes) => {
+watch(votes.value, (votes) => {
   if (votes.size > 3) {
     showResults.value = true
   }
