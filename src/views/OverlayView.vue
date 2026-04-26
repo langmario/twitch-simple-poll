@@ -28,7 +28,10 @@ const results = computed(() =>
 
 function onChat(user: string, originalMessage: string) {
   const message = originalMessage.toLowerCase().trim()
+
+  // Check if message matches any of the keywords
   if (Object.values(voteOptions).some((options) => options.includes(message))) {
+    // Get the key for the keyword that matched the message
     const key = Object.entries(voteOptions).find(([, options]) =>
       options.includes(message),
     )?.[0] as VoteKeys | undefined
