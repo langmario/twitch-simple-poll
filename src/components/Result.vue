@@ -20,7 +20,9 @@ const percent = computed(() => Math.round((value / total) * 100))
           <span class="ml-4 opacity-50">{{ value }}</span>
         </div>
       </div>
-      <div class="text-right text-3xl font-bold text-current">{{ percent }} %</div>
+      <div class="font-display text-right text-4xl font-extrabold text-current">
+        {{ percent }} %
+      </div>
     </div>
     <Bar class="h-4" :percent="percent" :votes="value" />
   </section>
